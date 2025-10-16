@@ -1,0 +1,252 @@
+/* =========================================
+   GLOBAL COMPONENT STYLES (FINAL RED-GLOW THEME)
+========================================= */
+
+/* === PROFILE PICTURES === */
+.profile-pic {
+  max-width: 200px;
+  border: 3px solid #190a7a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-pic:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.7);
+}
+
+/* Special glow for About section profile pictures */
+#about .profile-pic {
+  border: 3px solid #e90b0b;
+  box-shadow: 0 0 20px rgba(233, 11, 11, 0.8);
+  animation: redPulse 3s infinite ease-in-out;
+}
+
+/* Red pulse glow animation */
+@keyframes redPulse {
+  0% {
+    box-shadow: 0 0 10px rgba(233, 11, 11, 0.6),
+                0 0 20px rgba(233, 11, 11, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(233, 11, 11, 1),
+                0 0 45px rgba(233, 11, 11, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(233, 11, 11, 0.6),
+                0 0 20px rgba(233, 11, 11, 0.4);
+  }
+}
+
+/* === ABOUT SECTION TRANSPARENT BOX === */
+.dark-box {
+  background: rgba(0, 0, 0, 0.3); /* transparent black layer */
+  backdrop-filter: blur(8px); /* frosted glass effect */
+  color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: none;
+}
+
+/* Hover glow for the box */
+.dark-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.4);
+}
+
+/* Text styling inside the box */
+.dark-box h3 {
+  color: #ff3b3b;
+  text-shadow: 0 0 12px rgba(255, 50, 50, 0.9);
+  margin-bottom: 10px;
+}
+
+.dark-box p {
+  margin: 5px 0;
+  color: #f1f1f1;
+}
+
+/* === REMOVE ALL BACKGROUNDS THAT BLOCK THE GIF === */
+#about .container,
+#about .row,
+#about .col-md-8,
+#about .content-box {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+
+/* Skill/Mission Cards (shared style) */
+.skill-card,
+.mission .skill-card {
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  border-radius: 12px;
+  padding: 25px 30px;
+  color: #fff;
+  line-height: 1.6;
+  text-align: justify;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(6px);
+}
+.skill-card:hover,
+.mission .skill-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+.skill-card .card-title,
+.skill-card .card-text {
+  color: #fff;
+}
+
+/* =========================================
+   SECTION BACKGROUNDS & OVERLAYS
+========================================= */
+
+/* About Section */
+#about.dark-background {
+  position: relative;
+  background: url("../img/night 2.gif") no-repeat center center/cover;
+  color: white;
+  padding: 80px 0;
+}
+#about.dark-background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+#about .container {
+  position: relative;
+  z-index: 2;
+}
+#about h2,
+#about p,
+#about h3 {
+  color: white;
+}
+#about .content-box h3 {
+  color: #e90b0b;
+}
+
+/* Skills Section */
+.skills-bg {
+  position: relative;
+  background: url("../img/falls.gif") no-repeat center center/cover;
+  background-attachment: fixed;
+  color: #fff;
+  padding: 100px 0;
+  overflow: hidden;
+}
+.skills-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+.skills-bg .container {
+  position: relative;
+  z-index: 1;
+}
+.skills-bg .section-title h2,
+.skills-bg .section-title p {
+  color: #fff !important;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+}
+
+/* Mission Section (shares Skills background) */
+.mission.skills-bg {
+  background: url("../img/falls.gif") no-repeat center center/cover;
+  background-attachment: fixed;
+}
+.mission.skills-bg::before {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* Contact Section */
+#contact.dark-background {
+  position: relative;
+  background: url("../img/night.gif") no-repeat center center/cover;
+  color: white;
+  padding: 60px 0;
+}
+#contact.dark-background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+#contact .container,
+#contact .info-wrap {
+  position: relative;
+  z-index: 2;
+}
+#contact h2,
+#contact p,
+#contact h3,
+#contact i {
+  color: white;
+}
+#contact i {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+/* Footer (shared background with Contact) */
+footer.same-bg {
+  position: relative;
+  background: url("../img/night.gif") no-repeat center center/cover;
+  background-attachment: fixed;
+  color: #fff;
+  padding: 40px 0;
+}
+footer.same-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+}
+footer.same-bg .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================================
+   PIXELATED PRELOADER
+========================================= */
+
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.pixel-loader {
+  display: flex;
+  gap: 8px;
+}
+.pixel-loader span {
+  width: 20px;
+  height: 20px;
+  background: #e90b0b;
+  animation: pixel-blink 1.2s infinite ease-in-out;
+  image-rendering: pixelated;
+}
+.pixel-loader span:nth-child(1) { animation-delay: 0s; }
+.pixel-loader span:nth-child(2) { animation-delay: 0.2s; }
+.pixel-loader span:nth-child(3) { animation-delay: 0.4s; }
+.pixel-loader span:nth-child(4) { animation-delay: 0.6s; }
+
+@keyframes pixel-blink {
+  0%, 80%, 100% { opacity: 0.2; transform: scale(1); }
+  40% { opacity: 1; transform: scale(1.2); }
+}
